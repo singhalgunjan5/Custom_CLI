@@ -1,0 +1,19 @@
+{
+  "name": "gunjancli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "gunjan1": "./bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "path": "^0.12.7",
+    "yargs": "^17.7.2"
+  }
+}
