@@ -25,7 +25,7 @@ else if(args.length === 1)
        }
        else{
        console.log("Invalid command")
-       console.log("To know the valid commands run: gunjan1 --help")
+       console.log("To know the valid commands run: mycli --help")
        }
 }
 else if(args.length == 2)

@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const helpInfo = `
-Usage: gunjan1 [command] [FilePath]
+Usage: mycli [command] [FilePath]
 
 A simple CLI tool.
 
@@ -13,10 +13,10 @@ Commands:
   
 
 Examples:
-  gunjan1 command1 <FilePath>
-  gunjan1 <FilePath>
+  mycli command1 <FilePath>
+  mycli <FilePath>
 
-For more information, run: gunjan1 --help
+For more information, run: mycli --help
 `;
 
 

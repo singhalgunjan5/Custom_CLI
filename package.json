@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "gunjan1": "./bin/index.js"
+    "mycli": "./bin/index.js"
   },
   "dependencies": {
     "commander": "^12.0.0",
