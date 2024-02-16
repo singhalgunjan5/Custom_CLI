@@ -20,5 +20,6 @@ If no options are provided, ccwc will output the count of bytes, lines, and word
 To display usage instructions and available options, use the `--help` or `-h` option:
 
 ## Output
-![Image](https://ibb.co/680kwwt)
+![Image Description](https://i.postimg.cc/XqTjbJWp/Whats-App-Image-2024-02-16-at-20-51-16.jpg)
+
 
