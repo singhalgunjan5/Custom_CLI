@@ -1,55 +1,60 @@
 #!/usr/bin/env node
 const path = require('path');
 const Allcommands = require(path.join(__dirname, '..', 'commands', 'Allcommands'));
-const {helpInfo} = require(path.join(__dirname, '..', 'commands', 'helpers'));
+const {helpInfo,updateFile} = require(path.join(__dirname, '..', 'commands', 'helpers'));
 
-const { NumberOfWords, NumberOfLines} = Allcommands;
+const { NumberOfWords, NumberOfLines,NumberOfBytes,NumberOfCharacters} = Allcommands;
 const fs = require('fs');
+
 const args = process.argv.slice(2);
 
-const command = args[0];
+
+
+
+// updateFile(filePath);
+ if(args.length != 2)
+{
+    
+    filePath=args[0];
+    if (filePath != "") {
+     
+     console.log(filePath);
+      NumberOfBytes(filePath);
+      NumberOfLines(filePath);
+      NumberOfWords(filePath);
+    }
+    else{
+    console.log("Invalid command")
+    console.log("To know the valid commands run: gunjan1 --help")
+    }
+}
+else{
+    const command = args[0];
 const filePath = args[1];
 if (command === '--help' || command === '-h') {
     console.log(helpInfo);
     return;
 }
-else if(args.length != 2)
+else if(command === '-c')
 {
-    console.log("Invalid command")
-    console.log("To know the valid commands run: gunjan1 --help")
+    NumberOfBytes(filePath);
 }
-else if(command == '-c')
+else if(command === '-l')
 {
-    console.log("number of bytes"+filePath)
+    NumberOfLines(filePath)
 }
-
-
-function updateFile()
+else if(command === '-w')
 {
-    fs.readFile(filePath,'utf-8',function(err,data){
-        if(err)
-        {
-            console.log(err);
-        }
-        else{
-          
-            fs.writeFile('text.txt',data,function(err){
-                if(err)console.log(err);
-
-            })
-        }
-    })
+    NumberOfWords(filePath);
 }
-updateFile();
-fs.stat(filePath, (err, stats) => {
-    if (err) {
-        console.error(`Error getting file stats: ${err.message}`);
-        return;
-    }
+else if(command === '-m')
+{
+    NumberOfCharacters(filePath)
+}
 
-    // Number of bytes in the file
-    const fileSizeInBytes = stats.size;
-    console.log(`Number of bytes in the file: ${fileSizeInBytes}`);
-});
+
+}
+
+
 
 // NumberOfWords();

@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const helpInfo = `
 Usage: gunjan1 [command] [FileName]
 
@@ -14,7 +16,23 @@ Examples:
 
 For more information, run: gunjan1 --help
 `;
-const fs = require('fs');
 
 
-module.exports ={helpInfo}
+function updateFile(filePath)
+{
+    fs.readFile(filePath,'utf-8',function(err,data){
+        if(err)
+        {
+            console.log(err);
+        }
+        else{
+          
+            fs.writeFile('text.txt',data,function(err){
+                if(err)console.log(err);
+
+            })
+        }
+    })
+}
+
+module.exports ={helpInfo,updateFile}
