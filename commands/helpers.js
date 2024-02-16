@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const helpInfo = `
-Usage: gunjan1 [command] [FileName]
+Usage: gunjan1 [command] [FilePath]
 
 A simple CLI tool.
 
@@ -10,9 +10,11 @@ Commands:
   -l         Outputs the number of lines
   -w         Outputs the number of words
   -m         Outputs the number of characters
+  
 
 Examples:
-  mycli command1 <FileName>
+  gunjan1 command1 <FilePath>
+  gunjan1 <FilePath>
 
 For more information, run: gunjan1 --help
 `;

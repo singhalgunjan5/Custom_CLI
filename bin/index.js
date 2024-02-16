@@ -2,20 +2,20 @@
 const path = require('path');
 const Allcommands = require(path.join(__dirname, '..', 'commands', 'Allcommands'));
 const {helpInfo,updateFile} = require(path.join(__dirname, '..', 'commands', 'helpers'));
-
 const { NumberOfWords, NumberOfLines,NumberOfBytes,NumberOfCharacters} = Allcommands;
 const fs = require('fs');
-
 const args = process.argv.slice(2);
-
-
-
-
-// updateFile(filePath);
- if(args.length != 2)
+if (args[0] === '--help' || args[0] === '-h') {
+    console.log(helpInfo);
+    return;
+}
+else if(args.length === 0 || args.length == 1)
+{
+    console.log(helpInfo);
+}
+ else if(args.length != 2)
 {
     
-    filePath=args[0];
     if (filePath != "") {
      
      console.log(filePath);
@@ -30,12 +30,9 @@ const args = process.argv.slice(2);
 }
 else{
     const command = args[0];
-const filePath = args[1];
-if (command === '--help' || command === '-h') {
-    console.log(helpInfo);
-    return;
-}
-else if(command === '-c')
+    const filePath = args[1];
+
+ if(command === '-c')
 {
     NumberOfBytes(filePath);
 }
@@ -51,7 +48,9 @@ else if(command === '-m')
 {
     NumberOfCharacters(filePath)
 }
-
+else{
+    console.log(helpInfo);
+}
 
 }
 
