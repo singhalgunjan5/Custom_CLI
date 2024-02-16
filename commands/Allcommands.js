@@ -4,6 +4,9 @@ const  NumberOfWords  = require(path.join(__dirname, '..', 'commands', 'NumberOf
 const  NumberOfLines  = require(path.join(__dirname, '..', 'commands', 'NumberOfLines'))
 
 
+// Implement help functionality
+
+
 
 module.exports = { NumberOfLines, NumberOfWords };
 
