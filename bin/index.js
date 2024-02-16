@@ -24,36 +24,32 @@ else if(command == '-c')
 }
 
 
-function getContent(filePath, callback) {
-    // Read the content of the file
-    fs.readFile(filePath, 'utf8', function(err, data) {
-        if (err) {
-            console.error(`Error reading file: ${err.message}`);
-            callback(err); // Call the callback function with the error
-            return;
+function updateFile()
+{
+    fs.readFile(filePath,'utf-8',function(err,data){
+        if(err)
+        {
+            console.log(err);
         }
-        
-        // Write the content to 'text.txt' file
-        fs.writeFile('text.txt', data, 'utf8', function(err) {
-            if (err) {
-                console.error(`Error writing file: ${err.message}`);
-                callback(err); // Call the callback function with the error
-                return;
-            }
-            
-            // Call the callback function with the data
-            callback(null, data);
-        });
-    });
-}
+        else{
+          
+            fs.writeFile('text.txt',data,function(err){
+                if(err)console.log(err);
 
-// Usage example:
-getContent(filePath, function(err, data) {
+            })
+        }
+    })
+}
+updateFile();
+fs.stat(filePath, (err, stats) => {
     if (err) {
-        console.error('Error:', err);
-    } else {
-        console.log('Content:', data);
+        console.error(`Error getting file stats: ${err.message}`);
+        return;
     }
+
+    // Number of bytes in the file
+    const fileSizeInBytes = stats.size;
+    console.log(`Number of bytes in the file: ${fileSizeInBytes}`);
 });
 
 // NumberOfWords();
