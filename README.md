@@ -1,7 +1,7 @@
 ## Installation
 To use mycli, you need to have Node.js installed on your system. You can install it globally using npm:
-1)Clone the repo
-2)Run npm install -g
+- Clone the repo
+- Run npm install -g
 
 ## mycli [options] <file_path>
 Replace `<file_path>` with the path to the file you want to analyze.
@@ -18,4 +18,7 @@ If no options are provided, ccwc will output the count of bytes, lines, and word
 ### Help
 
 To display usage instructions and available options, use the `--help` or `-h` option:
+
+## Output
+![Image](https://ibb.co/680kwwt)
 
