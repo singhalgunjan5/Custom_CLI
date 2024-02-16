@@ -36,5 +36,7 @@ function updateFile(filePath)
         }
     })
 }
-
-module.exports ={helpInfo,updateFile}
+function isFileValid(filePath) {
+    return fs.existsSync(filePath);
+}
+module.exports ={helpInfo,updateFile,isFileValid}
